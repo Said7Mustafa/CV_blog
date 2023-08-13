@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* Design */
+
+    /* Styles for the section */
+    #section2 {
+        background: #e6e6e6;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    /* Styles for the grid container */
+    .grid-section2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Styles for each cell */
+    .cell-section {
+        text-align: center;
+        width: 100%;
+        background-color: #e6e6e6;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    /* Styles for the cell content */
+    .cell-content {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Styles for the paragraphs */
+    p {
+        color: #001818;
+    }
+
+    /* Styles for the collapse */
+    .collapse {
+        position: relative;
+        overflow: hidden;
+        max-height: 70px;
+        transition: max-height 0.5s ease;
+    }
+
+    .collapse .dots,
+    .collapse .more,
+    .collapse .less {
+        display: inline;
+    }
+
+    .collapse .more,
+    .collapse .less {
+        display: none;
+    }
+
+    .collapse.open {
+        max-height: none;
+    }
+
+    .collapse.open .dots,
+    .collapse.open .more {
+        display: none;
+    }
+
+    .collapse.open .less {
+        display: inline;
+    }
+
+    /* Styles for the images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<section id="section2">
+    <div class="section2-container">
+        <div class="grid-section2">
+            <div class="cell-section">
+                <div class="cell-content">
+                    <img src="{% static 'blog_pages/img/3.jpeg' %}" alt="My image">
+                </div>
+            </div>
+            <div class="cell-section">
+                <div class="cell-content">
+                    <p id="myText3" class="collapse">
+                        This will be the text
+                        <span class="dots">...</span>
+                        <span class="more"> and the text will continue here. I want the same style and behavior to happen to both myText3 and myText4.</span>
+                        <span class="less">less</span>
+                    </p>
+                </div>
+            </div>
+            <div class="cell-section">
+                <div class="cell-content">
+                    <p id="myText4" class="collapse">
+                        Description 4 starts from here
+                        <span class="dots">...</span>
+                        <span class="more"> and the text will continue here. I want the same style and behavior to happen to both myText3 and myText4.</span>
+                        <span class="less">less</span>
+                    </p>
+                </div>
+            </div>
+            <div class="cell-section">
+                <div class="cell-content">
+                    <img src="{% static 'blog_pages/img/4.jpeg' %}" alt="My image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var collapseElements = document.getElementsByClassName('collapse');
+
+    for (var i = 0; i < collapseElements.length; i++) {
+        var collapseElement = collapseElements[i];
+        var dotsElement = collapseElement.getElementsByClassName('dots')[0];
+        var moreElement = collapseElement.getElementsByClassName('more')[0];
+        var lessElement = collapseElement.getElementsByClassName('less')[0];
+
+        dotsElement.style.display = 'inline';
+        moreElement.style.display = 'none';
+        lessElement.style.display = 'none';
+
+        (function(collapseElement, dotsElement, moreElement, lessElement) {
+            moreElement.addEventListener('click', function() {
+                dotsElement.style.display = 'none';
+                moreElement.style.display = 'none';
+                lessElement.style.display = 'inline';
+                collapseElement.classList.add('open');
+            });
+
+            lessElement.addEventListener('click', function() {
+                dotsElement.style.display = 'inline';
+                moreElement.style.display = 'inline';
+                lessElement.style.display = 'none';
+                collapseElement.classList.remove('open');
+            });
+        })(collapseElement, dotsElement, moreElement, lessElement);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /************************* Section 1 *********************************/
+    #section1 {
+        background-color: rgb(213, 192, 192);
+    }
+    
+    /* Set the size of the grid section */
+    .section1-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .grid-section1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        width: 750px;
+        height: auto;
+    }
+
+    /* Style for each cell */
+    .cell-section {
+        margin: 10px;
+    }
+
+    /* Style for cell content */
+    .cell-content {
+        display: flex;
+        flex-direction: column;
+        background-color: #64ceaf;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* Style for image */
+    .cell-content img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* Style for paragraph */
+    .cell-content p {
+        padding: 10px;
+        color: #FFF;
+        border-radius: 1em;
+        text-align: left;
+        max-height: 100px;
+        overflow: hidden;
+        font-size: 1.2em;
+        margin: 0;
+        position: relative; /* Added for hover effect */
+        cursor: pointer; /* Added for cursor pointer */
+    }
+
+    /* Start with more not displayed */
+    .more {
+        display: none;
+    }
+
+    /* How the style should be, start with dots displayed */
+    .cell-section .dots {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /* How the style should be, start with less not displayed */
+    .cell-section .less {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .cell-section p.collapse,
+    .cell-section p.expanded {
+        max-height: none;
+        margin: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .cell-section p.expanded {
+        max-height: none;
+    }
+
+    /* Click on dot to add text */
+    /* Click on less to become short */
+    .cell-section p.expanded .less,
+    .cell-section p.expanded .more {
+        display: inline;
+    }
+    
+    /* Updated rules for expanding background */
+    .cell-section.expanded {
+        flex-grow: 1;
+        overflow: visible;
+    }
+
+    /* Hover effect */
+    .cell-section p.collapse .dots,
+    .cell-section p.expanded .less {
+        font-size: 1.3em; /* Increase the size when hovering */
+        display: inline-block;
+        color: black;
+        font-weight: 900;
+    }
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var textContainers = document.querySelectorAll(".collapse");
+
+        textContainers.forEach(function(textContainer) {
+            var dots = textContainer.querySelector(".dots");
+            var moreText = textContainer.querySelector(".more");
+            var less = textContainer.querySelector(".less");
+
+            dots.addEventListener("click", function() {
+                if (textContainer.classList.contains("collapse")) {
+                    textContainer.classList.remove("collapse");
+                    textContainer.classList.add("expanded");
+                    dots.style.display = "none";
+                }
+            });
+
+            less.addEventListener("click", function() {
+                if (textContainer.classList.contains("expanded")) {
+                    textContainer.classList.remove("expanded");
+                    textContainer.classList.add("collapse");
+                    dots.style.display = "inline";
+                }
+            });
+        });
+    });
+</script>
+</head>
+<body>
+    <section id="section1">
+        <div class="section1-container">
+            <div class="grid-section1">
+                <div class="cell-section">
+                    <div class="cell-content">
+                        <img src="1.jpeg" alt="Image 1">
+                    </div>
+                </div>
+                <div class="cell-section">
+                    <div class="cell-content">
+                        <p id="myText1" class="collapse">
+                            This will be the text
+                            <span class="dots">...</span>
+                            <span class="more"> and the text will continue here.i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name</span>
+                            <span class="less">less</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell-section">
+                    <div class="cell-content">
+                        <p id="myText2" class="collapse">
+                            Description 2 starts from here and 
+                            <span class="dots">...</span>
+                            <span class="more"> and the and the text will continue here.i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all thosill continue here.</span>
+                            <span class="less">less</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell-section">
+                    <div class="cell-content">
+                        <img src="3.jpeg" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

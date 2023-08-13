@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog_pages/css/cv_style.css' %}">
+<div class="cv">
+    <h1>{{ cv.name }}</h1>
+    <!-- Display other static information -->
+    <!-- <p>{{ cv.surname }}</p>
+    <p>{{ cv.date_of_birth }}</p>
+    <p>{{ cv.email }}</p>
+    <p>{{ cv.phone }}</p>
+    <p>{{ cv.address }}</p> -->
+    <!-- Display other static information -->
+
+    <h2>Experiences</h2>
+    <ul>
+        {% for experience in cv.experiences.all %}
+        <li>
+            <h3>{{ experience.title }}</h3>
+            <!-- <p>{{ experience.company }}</p>
+            <p>{{ experience.location }}</p>
+            <p>{{ experience.description }}</p>
+            <p>{{ experience.start_date }}</p>
+            <p>{{ experience.end_date }}</p>
+            <p>{{ experience.currently_working }}</p> -->
+            <!-- Display other experience fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        {% for education in cv.education.all %}
+        <li>
+            <h3>{{ education.degree }}</h3>
+            <!-- <p>{{ education.field_of_study }}</p>
+            <p>{{ education.institution }}</p>
+            <p>{{ education.location }}</p>
+            <p>{{ education.description }}</p>
+            <p>{{ education.start_date }}</p>
+            <p>{{ education.end_date }}</p>
+            <p>{{ education.currently_enrolled }}</p> -->
+            <!-- Display other education fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in cv.skills.all %}
+        <li>
+            <h3>{{ skill.name }}</h3>
+            <!-- Display other skill fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Languages</h2>
+    <ul>
+        {% for language in cv.languages.all %}
+        <li>
+            <h3>{{ language.name }}</h3>
+            <!-- Display other language fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+        {% for certification in cv.certifications.all %}
+        <li>
+            <h3>{{ certification.title }}</h3>
+            <!-- <p>{{ certification.organization }}</p>
+            <p>{{ certification.description }}</p>
+            <p>{{ certification.date }}</p> -->
+            <!-- Display other certification fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+        {% for project in cv.projects.all %}
+        <li>
+            <h3>{{ project.title }}</h3>
+            <!-- <p>{{ project.description }}</p>
+            <p>{{ project.start_date }}</p>
+            <p>{{ project.end_date }}</p>
+            <p>{{ project.currently_working }}</p> -->
+            <!-- Display other project fields -->
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Hobbies</h2>
+    <ul>
+        {% for hobby in cv.hobbies.all %}
+        <li>
+            <h3>{{ hobby.name }}</h3>
+            <!-- Display other hobby fields -->
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

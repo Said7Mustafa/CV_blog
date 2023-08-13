@@ -1,0 +1,246 @@
+.body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.body-column{
+    width: 1500px;
+}
+
+/***************************************** Section 2 *****************************************/
+
+.grid-section1 {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto;
+    height: auto;
+}
+
+/* Style for each cell */
+.cell-section {
+    margin: 10px;
+}
+
+/* Style for cell content */
+.cell-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    justify-content: center; /* Horizontally center content */
+}
+
+/* Style for image */
+.cell-content img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Style for paragraph */
+.cell-content p {
+    background-color:rgb(82, 109, 130);
+    padding: 10px;
+    color: #FFF;
+    border-radius: 1em;
+    text-align: left;
+    max-height: 100px;
+    overflow: hidden;
+    font-size: 1.2em;
+    margin: 0;
+    position: relative; /* Added for hover effect */
+    cursor: pointer; /* Added for cursor pointer */
+}
+
+/* Start with more not displayed */
+.more {
+    display: none;
+}
+
+/* How the style should be, start with dots displayed */
+.cell-section .dots {
+    display: inline;
+    cursor: pointer;
+}
+
+/* How the style should be, start with less not displayed */
+.cell-section .less {
+    display: none;
+    cursor: pointer;
+}
+
+.cell-section p.collapse,
+.cell-section p.expanded {
+    max-height: none;
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.cell-section p.expanded {
+    max-height: none;
+}
+
+/* Click on dot to add text */
+/* Click on less to become short */
+.cell-section p.expanded .less,
+.cell-section p.expanded .more {
+    display: inline;
+}
+
+/* Updated rules for expanding background */
+.cell-section.expanded {
+    flex-grow: 1;
+    overflow: visible;
+}
+
+/* Hover effect */
+.cell-section p.collapse .dots,
+.cell-section p.expanded .less {
+    font-size: 1.3em; /* Increase the size when hovering */
+    display: inline-block;
+    color: rgb(235, 56, 56);
+    font-weight: 900;
+}
+
+
+
+/***************************************** Section 2 *****************************************/
+
+    /* General Styling */
+
+    h1 {
+        color: #d9d9d9;
+        font-weight: 200;
+        text-align: center;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+    }
+
+    h2 {
+        color: #007fed;
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: #001818;
+    }
+
+    /* Transition Styling */
+
+    .wrap {
+        position: absolute;
+        overflow: hidden;
+        top: 10%;
+        right: 10%;
+        bottom: 10%;
+        left: 10%;
+        padding: 20px 50px;
+        display: block;
+        border-radius: 4px;
+        transform: translateY(-100%);
+        transition: all 0.5s;
+        visibility: hidden;
+        background-color: rgba(55, 214, 89, 0.5);
+    }
+
+    .wrap .content {
+        opacity: 0;
+    }
+
+    .wrap.active {
+        visibility: visible;
+        box-shadow: 2px 3px 16px #75df7b;
+        transition: all 600ms;
+        transform: translateY(0px);
+    }
+
+    .wrap.active .content {
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+        transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    a.button {
+        padding: 11px 11px 13px 13px;
+        outline: none;
+        border-radius: 50%;
+        background: #007fed;
+        color: #fff;
+        font-size: 24px;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.25s;
+        margin-top: 10px;
+    }
+
+    a.button:hover {
+        text-decoration: none;
+        background: #0c8be2;
+    }
+
+    a.button.active {
+        transform: rotate(135deg);
+        transition: transform 0.5s;
+    }
+
+    /* Additional CSS for the container and columns */
+
+    .section2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .column {
+        text-align: center;
+        /* background-color: #e6e6e6; */
+        border-radius: 4px;
+        position: relative;
+        /* margin-bottom: 75px; */
+    }
+
+    .image-wrapper {
+        height: 600px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .column img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .button-wrapper {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* .column {
+        background-color: red;
+    }
+    .image-wrapper{
+        background-color:#007fed;
+    }
+    .wrap {
+        background-color: green;
+    }
+    .button-wrapper{
+        background-color: aqua;
+    } */

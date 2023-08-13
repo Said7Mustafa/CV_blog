@@ -1,0 +1,142 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: rgb(20,40,80);
+    background: radial-gradient(circle, rgba(20,40,80,1) 20%, rgba(39,73,109,1) 40%, rgba(12,123,147,1) 60%, rgba(0,168,204,1) 80%);
+}
+
+
+.content-container {
+width: 100%;
+padding: 20px;
+overflow-x: auto;
+}
+/* Header styling */
+
+
+/* Remove bullet points from the nav menu */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the spacing between menu items as needed */
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+/* Style the navigation */
+nav {
+    background: rgb(20,40,80);
+    background: linear-gradient(0deg, rgba(20,40,80,1) 20%, rgba(39,73,109,1) 40%, rgba(12,123,147,1) 60%, rgba(0,168,204,1) 80%);
+    color: rgb(230, 236, 239);
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+
+
+.nav-menu li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1em;
+    transition: transform 0.2s ease-in-out; /* Add transition for smooth effect */
+}
+
+.nav-menu li:hover a {
+    transform: scale(1.1); /* Increase the size without affecting other content */
+    display: inline-block;
+}
+
+
+
+/* Footer styling */
+
+footer {
+    background: rgb(20,40,80);
+    background: linear-gradient(180deg, rgba(20,40,80,1) 20%, rgba(39,73,109,1) 40%, rgba(12,123,147,1) 60%, rgba(0,168,204,1) 80%);
+    color: rgb(230, 236, 239);
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-column {
+    margin: 35px;
+}
+
+.footer-column h3 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.social-links li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent */
+    font-size: 1em;
+}
+
+.footer-copyright {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #888;
+}
+
+@media (max-width: 300px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 400px) {
+    footer {
+        text-align: center;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .footer-column {
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+        margin-top: 10px;
+    }
+
+    .footer-column li {
+        margin-bottom: 5px; /* Reduce the margin to create a tighter spacing */
+    }
+}
+
+

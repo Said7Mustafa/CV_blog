@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog_pages/css/index_style.css' %}">
+<script src="{% static 'blog_pages/js/index_script.js' %}"></script>
+<link rel="stylesheet" href="{% static 'blog_pages/css/seperator__style.css' %}">
+
+<div class = "body-container">
+    <div class = "body-column">
+
+        <!-- <h1>Welcome to My Website</h1>
+        <img src="" alt="My Photo">
+        <hr>
+        <h2>Latest Project:</h2>
+        <h3>{{ latest_project.title }}</h3>
+        <p>{{ latest_project.description }}</p>
+        <p>{{ latest_project.usage }}</p>
+    
+        <h3>Comments</h3> -->
+    
+        <!-- *************************************************************** -->
+        <hr />
+    
+        <section id="section1">
+            <div class="section1-container">
+                <div class="grid-section1">
+                    <div class="cell-section">
+                        <div class="cell-content">
+                            <img src="{% static 'blog_pages/img/1.jpeg' %}" alt="My image">
+                        </div>
+                    </div>
+                    <div class="cell-section">
+                        <div class="cell-content">
+                            <p id="myText1" class="collapse">
+                                This will be the text
+                                <span class="dots">...</span>
+                                <span class="more"> and the text will continue here.i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name</span>
+                                <span class="less">less</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cell-section">
+                        <div class="cell-content">
+                            <p id="myText2" class="collapse">
+                                Description 2 starts from here and 
+                                <span class="dots">...</span>
+                                <span class="more"> and the and the text will continue here.i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all those with the same class name i want the the same style and js to happen to both mytext1 and mytext2, sepereate the style for each section and each div under the comment so i know what belongs to what, same for js. do it with class so it applies to all thosill continue here.</span>
+                                <span class="less">less</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cell-section">
+                        <div class="cell-content">
+                            <img src="{% static 'blog_pages/img/2.jpeg' %}" alt="My image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+        <!-- *************************************************************** -->
+    
+    
+        <hr />
+    
+    
+        <section class="section2">
+            <div class="column">
+                <div class="image-wrapper">
+                    <img src="" alt="Image 1">
+                </div>
+                <div class="wrap">
+                    <div class="content">
+                        <h2>Title 1</h2>
+                        <p>Description 1</p>
+                        <a href="cv/">Read More</a>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#" class="button">Link 1</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="image-wrapper">
+                    <img src="" alt="Image 2">
+                </div>
+                <div class="wrap">
+                    <div class="content">
+                        <h2>Title 2</h2>
+                        <p>Description 2</p>
+                        <a href="cv/">Read More</a>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#" class="button">Link 2</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="image-wrapper">
+                    <img src="" alt="Image 3">
+                </div>
+                <div class="wrap">
+                    <div class="content">
+                        <h2>Title 3</h2>
+                        <p>Description 3</p>
+                        <a href="cv/">Read More</a>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#" class="button">Link 3</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="image-wrapper">
+                    <img src="" alt="Image 4">
+                </div>
+                <div class="wrap">
+                    <div class="content">
+                        <h2>Title 4</h2>
+                        <p>Description 4</p>
+                        <a href="cv/">Read More</a>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <a href="#" class="button">Link 4</a>
+                </div>
+            </div>
+        </section>
+
+
+        <hr />
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+{% endblock %} 
