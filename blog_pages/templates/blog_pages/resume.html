@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog_pages/css/cv_style.css' %}">
+<div class="cv">
+    <h1>{{ resume.name }}</h1>
+    
+    <!-- Experiences -->
+    
+    <h2>Experiences</h2>
+    <ul>
+        {% for experience in resume.experiences.all %}
+        <li>
+            <h3>{{ experience.title }}</h3>
+            {{ experience.company }}
+            {{ experience.location }}
+            {{ experience.description }}
+            {{ experience.start_date }}
+            {% if experience.currently_working %}
+            Present
+            {% else %}
+            {{ experience.end_date }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <!-- Education -->
+    <h2>Education</h2>
+    <ul>
+        {% for education in resume.education.all %}
+        <li>
+            <h3>{{ education.degree }}</h3>
+            {{ education.field_of_study }}
+            {{ education.institution }}
+            {{ education.location }}
+            {{ education.description }}
+            {{ education.start_date }}
+            {% if education.currently_enrolled %}
+            Present
+            {% else %}
+            {{ education.end_date }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Skills -->
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in resume.skills.all %}
+        <li>
+            <h3>{{ skill.name }}</h3>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Languages -->
+    <h2>Languages</h2>
+    <ul>
+        {% for language in resume.languages.all %}
+        <li>
+            <h3>{{ language.name }}</h3>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Certifications -->
+    <h2>Certifications</h2>
+    <ul>
+        {% for certification in resume.certifications.all %}
+        <li>
+            <h3>{{ certification.title }}</h3>
+            {{ certification.organization }}
+            {{ certification.description }}
+            {{ certification.date }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <ul>
+        {% for project in resume.projects.all %}
+        <li>
+            <h3>{{ project.title }}</h3>
+            {{ project.description }}
+            {{ project.start_date }}
+            {% if project.currently_working %}
+            Present
+            {% else %}
+            {{ project.end_date }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Hobbies -->
+    <h2>Hobbies</h2>
+    <ul>
+        {% for hobby in resume.hobbies.all %}
+        <li>
+            <h3>{{ hobby.name }}</h3>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

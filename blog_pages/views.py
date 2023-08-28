@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import CV
+from .models import Resume
 from .models import Project
 
 
@@ -19,13 +19,15 @@ def index(request):
 #     context = {'latest_project': latest_project}
 #     return render(request, 'index.html', context)
 
-def cv(request):
-    # Retrieve the CV object from the database
-    cv = CV.objects.first()  # Assuming you want to retrieve the first CV object
+def resume(request):
+    # Retrieve the Resume object from the database
+    resume = Resume.objects.first()  # Assuming you want to retrieve the first Resume object
     
-    # Pass the CV object to the template
-    return render(request, 'blog_pages/cv.html', {'cv': cv})
+    # Pass the Resume object to the template
+    return render(request, 'blog_pages/resume.html', {'resume': resume})
 
+# def resume(request):
+#     return HttpResponse("Hi!")
 
 def projects(request):
     
